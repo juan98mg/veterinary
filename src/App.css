@@ -171,9 +171,19 @@
 }
 
 /** Dialog */
-.dialog {}
 .dialog__title {
   text-align: center;
+}
+
+/** No Pets */
+.no-pets {
+  color: #FFFFFF;
+  background-color: rgb(53, 53, 53);
+  text-align: center;
+  width: 100%;
+  padding: 3rem;
+  font-size: 3rem;
+  font-weight: 400;
 }
 
 /** Tablet 768px*/

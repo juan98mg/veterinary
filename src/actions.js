@@ -15,7 +15,6 @@ export const getCollection = async (collection) => {
   try {
     const fetchData = await db.collection(collection).get();
     const data = fetchData.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-    console.log(data);
     result.status = true;
     result.data = [...data];
   } catch (error) {
@@ -40,7 +39,6 @@ export const getDocumentByID = async ({ collection, id }) => {
   const result = { status: false, data: undefined, error: undefined };
   try {
     const response = await db.collection(collection).doc(id).get();
-
     result.data = { id: response?.id, ...response?.data };
     result.status = true;
   } catch (error) {
