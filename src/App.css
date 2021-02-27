@@ -1,0 +1,213 @@
+.container {
+  margin-top: 40px;
+}
+
+/* Veterinary */
+.vet {
+  z-index: 1;
+}
+
+.vet__header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #3f51b5;
+  box-shadow: 0px 5px 9px 0px rgba(146,146,146,0.75);
+  margin-bottom: 20px;
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.vet__header-title {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-left: 20px;
+  color: #FFFFFF;
+}
+.vet__header-add {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.vet__header-add button {
+  border-radius: 20px;
+}
+
+.vet__pets {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+  margin: 140px 20px 100px;
+}
+
+.card {
+  box-shadow: 0px 3px 10px 3px rgba(146,146,146,0.75);
+  padding: 1.25rem;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Pet */
+.pet {
+  display: grid;
+  grid-template-areas: 
+    'avatar name name name name name'
+    'avatar type type type type type'
+    'avatar breed breed breed breed breed'
+    'avatar birthDate birthDate birthDate birthDate birthDate';
+}
+.pet__avatar {
+  grid-area: avatar;
+  margin-right: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pet__avatar svg {
+  color: tomato;
+  padding: 1rem;
+  border-radius: 50%;
+  box-shadow: 2px 5px 9px 0px rgba(146,146,146,0.75);
+  width: 50px;
+  height: 50px;
+}
+.pet__name {
+  grid-area: name;
+  font-size: 1.8rem;
+  font-style: italic;
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+.pet__type {
+  grid-area: type;
+}
+.pet__breed {
+  grid-area: breed;
+}
+.pet__birthDate {
+  grid-area: birthDate;
+  margin-bottom: 20px;
+}
+
+.pet__type, .pet__breed, .pet__birthDate {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/** Owner*/
+.pet__owner {
+  display: grid;
+  grid-template-areas:
+  'fname fname fname lname lname lname'
+  'email email email email email email'
+  'address address address address address address'
+  'phone phone phone phone phone phone';
+}
+.pet__owner-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 400;
+  text-decoration: underline;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.pet__owner-name {
+  grid-area: fname;
+}
+.pet__owner-lastName {
+  grid-area: lname;
+}
+.pet__owner-email  {
+  grid-area: email;
+}
+.pet__owner-address {
+  grid-area: address;
+}
+.pet__owner-phoneNumber {
+  grid-area: phone;
+}
+.pet__owner-name,
+.pet__owner-lastName,
+.pet__owner-email,
+.pet__owner-address,
+.pet__owner-phoneNumber {
+  font-size: 1.125rem;
+  text-align: start;
+  margin-bottom: 15px;
+}
+
+.pet span, .pet__owner span {
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+/** Actions */
+.pet__actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+.pet__actions button {
+  width: 110px;
+  border-radius: 20px;
+}
+.pet__actions button:first-child {
+  background-color: #ffc600;
+  margin-right: 15px;
+}
+.pet__actions button:last-child {
+  background-color: #dc3545;
+}
+
+/** Dialog */
+.dialog {}
+.dialog__title {
+  text-align: center;
+}
+
+/** Tablet 768px*/
+@media (min-width: 768px) {
+  .vet__pets {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/** Small PC 992px*/
+@media (min-width: 1024px) {
+  .vet__pets {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 140px 60px 100px;
+  }
+  .vet__header-title {
+    margin-left: 60px;
+  }
+  .vet__header-add {
+    margin-right: 60px;
+  }
+}
+/** PC+  1200*/
+@media (min-width: 1200px) {
+  .vet__pets {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+    row-gap: 30px;
+    margin: 140px 200px 100px;
+  }
+  .vet__header-title {
+    margin-left: 200px;
+  }
+  .vet__header-add {
+    margin-right: 200px;
+  }
+}
